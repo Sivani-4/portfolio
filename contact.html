@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="style1.css">
+
+</head>
+<body>
+    <ul class="navbar">
+       
+        <li class="navitem"><a href="contact.html">CONTACT</a></li>
+       <li class="navitem"><a href="skills.html">SKILLS</a></li>
+       <li class="navitem"><a href="about.html" target="_self">ABOUT</a></li>
+       <li class="navitem"><a href="home.html" target="_self">HOME</a></li>
+       
+   </ul>
+  <h1>Contact Me</h1>
+  <p>Fill out the form to get in touch with me:</p>
+
+  <form id="contact-form">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required><br>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required><br>
+
+    <label for="subject">Subject:</label>
+    <input type="text" id="subject" name="subject" required><br>
+
+    <label for="message">Message:</label>
+    <textarea id="message" name="message" rows="4" required></textarea><br>
+
+    
+    <button type="submit">Submit</button>
+  </form>
+
+  <p>Connect with me on:</p>
+  <a href="https://www.linkedin.com/in/sivani-batchu-859217289"" target="_blank" rel="noopener noreferrer">
+    <i class="fa fa-linkedin"></i> LinkedIn
+  </a>
+  <br>
+  <a href="https://github.com/Sivani-4" target="_blank" rel="noopener noreferrer">
+    <i class="fa fa-github"></i> GitHub
+  </a>
+
+  <div id="output">
+    <h2>Output:</h2>
+    <p id="output-name"></p>
+    <p id="output-email"></p>
+    <p id="output-subject"></p>
+    <p id="output-contact"></p>
+  </div>
+
+  <script>
+    const contactForm = document.getElementById("contact-form");
+    const outputName = document.getElementById("output-name");
+    const outputEmail = document.getElementById("output-email");
+    const outputSubject = document.getElementById("output-subject");
+    const outputContact = document.getElementById("output-contact");
+
+    contactForm.addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      const name = document.getElementById("name").value;
+      const email = document.getElementById("email").value;
+      const subject = document.getElementById("subject").value;
+      const contactCheckbox = document.getElementById("contact-checkbox").checked;
+
+      outputName.textContent = `Name: ${name}`;
+      outputEmail.textContent = `Email: ${email}`;
+      outputSubject.textContent = `Subject: ${subject}`;
+      outputContact.textContent = `Contact Me: ${contactCheckbox ? "Yes" : "No"}`;
+    });
+  </script>
+ 
+</body>
+</html>
